@@ -84,7 +84,7 @@ const Sidebar = () => {
       <div className={styles.user}>
         <Image
           className={styles.userImage}
-          src="/placeholder.jpg"
+          src="/noavatar.png"
           alt="Logo"
           width="50"
           height="50"
