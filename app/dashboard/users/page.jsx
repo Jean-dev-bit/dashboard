@@ -3,8 +3,11 @@ import styles from "@/app/ui/dashboard/users/users.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
-const UsersPage = () => {
-  
+import { fetchUsers } from "@/app/lib/data.js";
+const UsersPage = async ({ searchParams }) => {
+  const q = searchParams?.query || "";
+  const users = await fetchUsers(q);
+  console.log(users);
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -35,13 +38,13 @@ const UsersPage = () => {
                   height="40"
                   className={styles.userImage}
                 />
-                René
+                Abdul
               </div>
             </td>
-            <td>yemalindev2002@gmail.com</td>
-            <td>13.02.2024</td>
-            <td>Admin</td>
-            <td>active</td>
+            <td>adbul@gmail.com</td>
+            <td>11.12.2001</td>
+            <td>Client</td>
+            <td>Active</td>
             <td>
               <div className={styles.buttons}>
                 <Link href="/dashboard/users/test">
@@ -67,16 +70,16 @@ const UsersPage = () => {
                   height="40"
                   className={styles.userImage}
                 />
-                René
+                Solange
               </div>
             </td>
-            <td>yemalindev2002@gmail.com</td>
-            <td>13.02.2024</td>
-            <td>Admin</td>
-            <td>active</td>
+            <td>solange@gmail.com</td>
+            <td>15.01.2025</td>
+            <td>Client</td>
+            <td>Passive</td>
             <td>
               <div className={styles.buttons}>
-                <Link href="/">
+                <Link href="/dashboard/users/test">
                   <button className={`${styles.button} ${styles.view}`}>
                     View
                   </button>
@@ -99,16 +102,171 @@ const UsersPage = () => {
                   height="40"
                   className={styles.userImage}
                 />
-                René
+                Junior
               </div>
             </td>
-            <td>yemalindev2002@gmail.com</td>
-            <td>13.02.2024</td>
-            <td>Admin</td>
-            <td>active</td>
+            <td>junior@gmail.com</td>
+            <td>10.11.2023</td>
+            <td>Client</td>
+            <td>Passive</td>
             <td>
               <div className={styles.buttons}>
-                <Link href="/">
+                <Link href="/dashboard/users/test">
+                  <button className={`${styles.button} ${styles.view}`}>
+                    View
+                  </button>
+                </Link>
+                <button className={`${styles.button} ${styles.delete}`}>
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+          {/* 4rd users */}
+          <tr>
+            <td>
+              <div className={styles.user}>
+                <Image
+                  src="/noavatar.png"
+                  alt=""
+                  width="40"
+                  height="40"
+                  className={styles.userImage}
+                />
+                Peace
+              </div>
+            </td>
+            <td>peace@gmail.com</td>
+            <td>19.05.2021</td>
+            <td>Client</td>
+            <td>Passive</td>
+            <td>
+              <div className={styles.buttons}>
+                <Link href="/dashboard/users/test">
+                  <button className={`${styles.button} ${styles.view}`}>
+                    View
+                  </button>
+                </Link>
+                <button className={`${styles.button} ${styles.delete}`}>
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+          {/* 5rd users */}
+          <tr>
+            <td>
+              <div className={styles.user}>
+                <Image
+                  src="/noavatar.png"
+                  alt=""
+                  width="40"
+                  height="40"
+                  className={styles.userImage}
+                />
+                Antonio
+              </div>
+            </td>
+            <td>antonio@gmail.com</td>
+            <td>22.02.2022</td>
+            <td>Client</td>
+            <td>Active</td>
+            <td>
+              <div className={styles.buttons}>
+                <Link href="/dashboard/users/test">
+                  <button className={`${styles.button} ${styles.view}`}>
+                    View
+                  </button>
+                </Link>
+                <button className={`${styles.button} ${styles.delete}`}>
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+          {/* 6rd users */}
+          <tr>
+            <td>
+              <div className={styles.user}>
+                <Image
+                  src="/noavatar.png"
+                  alt=""
+                  width="40"
+                  height="40"
+                  className={styles.userImage}
+                />
+                Jean-Pierre
+              </div>
+            </td>
+            <td>jeanpierre@gmail.com</td>
+            <td>25.02.2023</td>
+            <td>Client</td>
+            <td>Active</td>
+            <td>
+              <div className={styles.buttons}>
+                <Link href="/dashboard/users/test">
+                  <button className={`${styles.button} ${styles.view}`}>
+                    View
+                  </button>
+                </Link>
+                <button className={`${styles.button} ${styles.delete}`}>
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+          {/* 7rd users */}
+          <tr>
+            <td>
+              <div className={styles.user}>
+                <Image
+                  src="/noavatar.png"
+                  alt=""
+                  width="40"
+                  height="40"
+                  className={styles.userImage}
+                />
+                Romaric
+              </div>
+            </td>
+            <td>romaric@gmail.com</td>
+            <td>17.04.2024</td>
+            <td>Admin</td>
+            <td>Passive</td>
+            <td>
+              <div className={styles.buttons}>
+                <Link href="/dashboard/users/test">
+                  <button className={`${styles.button} ${styles.view}`}>
+                    View
+                  </button>
+                </Link>
+                <button className={`${styles.button} ${styles.delete}`}>
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+          {/* 8rd users */}
+          <tr>
+            <td>
+              <div className={styles.user}>
+                <Image
+                  src="/noavatar.png"
+                  alt=""
+                  width="40"
+                  height="40"
+                  className={styles.userImage}
+                />
+                Marcel
+              </div>
+            </td>
+            <td>marcel@gmail.com</td>
+            <td>15.07.2024</td>
+            <td>Admin</td>
+            <td>Passive</td>
+            <td>
+              <div className={styles.buttons}>
+                <Link href="/dashboard/users/test">
                   <button className={`${styles.button} ${styles.view}`}>
                     View
                   </button>
